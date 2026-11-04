@@ -62,13 +62,17 @@ img{display:block;max-width:100%}
 .navtoggle{display:none}.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
 .burger span{width:24px;height:2px;background:var(--ink)}
 
-/* HERO — HUD control panel */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:132px 0 56px;position:relative}
-.coord{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--mute);margin-bottom:26px;display:flex;gap:16px;flex-wrap:wrap}
-.coord .o{color:var(--ochre)}
-.hero h1{font-size:clamp(46px,6.6vw,100px);font-weight:500;letter-spacing:-.02em;max-width:16ch;line-height:1.02}
-.hero h1 em{color:var(--ink);font-style:italic;border-bottom:3px solid var(--ochre);padding-bottom:2px}
-.hero .pull{color:var(--ink2);font-size:clamp(17px,1.5vw,20px);max-width:46ch;margin:26px 0 0;line-height:1.6}
+/* HERO — HUD control panel over Victor */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:72% 16%;filter:grayscale(.22) contrast(1.05) brightness(.6)}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--navy) 6%,rgba(16,24,41,.88) 38%,rgba(16,24,41,.44) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;padding-top:132px;padding-bottom:56px}
+.coord{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--muteL);margin-bottom:26px;display:flex;gap:16px;flex-wrap:wrap}
+.coord .o{color:var(--ochre2)}
+.hero h1{font-size:clamp(46px,6.6vw,100px);font-weight:500;letter-spacing:-.02em;max-width:16ch;line-height:1.02;color:var(--paper)}
+.hero h1 em{color:var(--paper);font-style:italic;border-bottom:3px solid var(--ochre2);padding-bottom:2px}
+.hero .pull{color:rgba(244,240,232,.86);font-size:clamp(17px,1.5vw,20px);max-width:46ch;margin:26px 0 0;line-height:1.6}
 /* HUD card row */
 .hud{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px;align-items:stretch}
 .hcard{border:1px solid var(--line);background:var(--card);padding:16px 20px;position:relative}
@@ -177,7 +181,9 @@ footer{background:var(--navy);color:var(--paper);padding:72px 0 42px;position:re
   .menu .apply{margin-top:12px;text-align:center}
   .navtoggle:checked ~ .menu{display:flex}
   .field{opacity:.32}
-  .hero{min-height:0;padding:112px 0 56px}
+  .hero{min-height:0}
+  .hero-inner{padding-top:104px;padding-bottom:48px}
+  .hero-bg:after{background:linear-gradient(180deg,rgba(16,24,41,.74),rgba(16,24,41,.9))}
   .hud{gap:12px}.hcard.status,.hcard.act{min-width:0;width:100%}
   .routes,.work,.victor,.fcols{grid-template-columns:1fr}
   .vframe{max-width:300px}
@@ -206,7 +212,9 @@ footer{background:var(--navy);color:var(--paper);padding:72px 0 42px;position:re
 </nav>
 
 <!-- HERO -->
-<header class="bleed hero">
+<header class="hero">
+  <div class="hero-bg"><img src="assets/victor-portrait.jpg" alt="Victor Pierantoni, performance coach, arms crossed in a grey knit polo against a dark wall"></div>
+  <div class="bleed hero-inner">
   <div class="coord"><span class="o">⌖ 00 / START</span><span>Online 1:1 Performance Coaching</span><span>Founders &amp; Adult Athletes</span></div>
   <h1>1:1 performance coaching for founders and <em>athletes</em></h1>
   <p class="pull">Bring a decision you keep revisiting, a conversation you are putting off or a moment of pressure you want to handle differently.</p>
@@ -227,6 +235,7 @@ footer{background:var(--navy);color:var(--paper);padding:72px 0 42px;position:re
       <div class="hl">Next Waypoint</div>
       <a href="#" class="btn ochre">Apply for 1:1 coaching</a>
     </div>
+  </div>
   </div>
 </header>
 
