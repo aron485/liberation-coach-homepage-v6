@@ -30,7 +30,7 @@ img{display:block;max-width:100%}
 .field{position:fixed;inset:0;z-index:0;pointer-events:none;
   background:url("assets/victor-bg.jpg") center/cover no-repeat}
 .field:after{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(13,20,35,.9) 0%,rgba(13,20,35,.72) 44%,rgba(13,20,35,.93) 100%)}
+  linear-gradient(180deg,rgba(11,17,30,.95) 0%,rgba(11,17,30,.92) 45%,rgba(11,17,30,.96) 100%)}
 
 /* waypoint label */
 .way{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:0 0 20px;display:inline-flex;align-items:center;gap:12px}
@@ -94,11 +94,16 @@ img{display:block;max-width:100%}
 .hcard.act a{align-self:flex-start}
 
 /* section / waypoint station */
-.sec{padding:clamp(72px,8vw,120px) 0;position:relative}
+.sec{padding:clamp(60px,6.5vw,98px) 0;position:relative}
 .sec.ink{background:var(--ink);color:var(--bone)}
-.sec.paper2{background:rgba(9,14,26,.42)}
-.shead h2{font-size:clamp(34px,4.6vw,64px);font-weight:500;max-width:18ch;color:var(--bone)}
+.sec.paper2{background:rgba(9,14,26,.5)}
+.shead h2{font-size:clamp(34px,4.6vw,62px);font-weight:500;max-width:18ch;color:var(--bone)}
 .shead p{color:var(--mute);font-size:17.5px;margin:22px 0 0;max-width:64ch;line-height:1.6}
+/* two-column intro heads (fill the width) */
+.rtop{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,66px);align-items:end;margin-bottom:8px}
+.rtop .shd h2{margin:0}
+.stepgrid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(30px,5vw,72px);align-items:start}
+.stepgrid .route-steps{margin-top:6px}
 
 /* routes — two field cards (translucent dark) */
 .routes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,40px);margin-top:52px}
@@ -151,9 +156,9 @@ img{display:block;max-width:100%}
 .wp p{color:var(--mute);font-size:16px;margin:0;max-width:60ch}
 
 /* quick answers */
-.qa{max-width:900px;margin:52px auto 0;border-top:1px solid var(--lineS)}
-.qa-item{padding:26px 2px;border-bottom:1px solid var(--lineS);display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:baseline}
-.qa-item .q{font-family:"Spectral",serif;font-size:21px;font-weight:500;color:var(--bone)}
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(40px,5vw,80px);max-width:none;margin:46px 0 0;border-top:1px solid var(--lineS)}
+.qa-item{padding:24px 2px;border-bottom:1px solid var(--lineS)}
+.qa-item .q{font-family:"Spectral",serif;font-size:20px;font-weight:500;color:var(--bone);margin-bottom:9px}
 .qa-item .a{color:var(--mute);font-size:16px}
 .qa-item .a a{color:var(--ochre2)}
 
@@ -186,11 +191,11 @@ footer{background:var(--ink);color:var(--bone);padding:72px 0 42px;position:rela
   .hero-inner{padding-top:104px;padding-bottom:48px}
   .hero-bg:after{background:linear-gradient(180deg,rgba(13,20,35,.74),rgba(13,20,35,.9))}
   .hud{gap:12px}.hcard.status,.hcard.act{min-width:0;width:100%}
-  .routes,.work,.victor,.fcols{grid-template-columns:1fr}
+  .routes,.work,.victor,.fcols,.rtop,.stepgrid,.qa{grid-template-columns:1fr}
+  .rtop{gap:14px}.stepgrid{gap:34px}
   .vframe{max-width:300px}
   .method{min-height:0;padding:0}.method .in{padding:70px 0}
   .method-bg:after{background:linear-gradient(180deg,rgba(10,15,27,.76),rgba(10,15,27,.95))}
-  .qa-item{grid-template-columns:1fr;gap:8px}
   .sec{padding:72px 0}
   .sticky{display:block;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:11px 16px;background:rgba(13,20,35,.97);border-top:1px solid var(--lineS)}
   .sticky .btn{display:flex;justify-content:center;width:100%}
@@ -243,9 +248,13 @@ footer{background:var(--ink);color:var(--bone);padding:72px 0 42px;position:rela
 <!-- ROUTES -->
 <section class="sec">
   <div class="bleed shead">
-    <p class="way"><span class="node"></span><b>01</b> · Find Your Starting Point</p>
-    <h2>Two routes into the same work</h2>
-    <p>Performance coaching at Liberation Coach is individual work with Victor Pierantoni on how you respond to a challenge and what you choose to do next. Founders, business owners and athletes aged 18 and older can bring a specific situation, examine the assumptions around it and consider a practical next step.</p>
+    <div class="rtop">
+      <div class="shd">
+        <p class="way"><span class="node"></span><b>01</b> · Find Your Starting Point</p>
+        <h2>Two routes into the same work</h2>
+      </div>
+      <p>Performance coaching at Liberation Coach is individual work with Victor Pierantoni on how you respond to a challenge and what you choose to do next. Founders, business owners and athletes aged 18 and older can bring a specific situation, examine the assumptions around it and consider a practical next step.</p>
+    </div>
     <div class="routes">
       <div class="rcard">
         <div class="ph"><span class="rpin">Route A · Founders</span><img src="https://images.pexels.com/photos/19747858/pexels-photo-19747858.jpeg?auto=compress&cs=tinysrgb&w=1300" alt="A founder writing in a notebook beside a glowing desktop screen in a dim office at night"></div>
@@ -313,15 +322,17 @@ footer{background:var(--ink);color:var(--bone);padding:72px 0 42px;position:rela
 
 <!-- STEPS — waypoints -->
 <section class="sec">
-  <div class="bleed">
-    <p class="way"><span class="node"></span><b>05</b> · How To Begin</p>
-    <h2 class="disp" style="font-size:clamp(34px,4.6vw,64px)">A conversation is the next step</h2>
+  <div class="bleed stepgrid">
+    <div>
+      <p class="way"><span class="node"></span><b>05</b> · How To Begin</p>
+      <h2 class="disp" style="font-size:clamp(34px,4.4vw,56px)">A conversation is the next step</h2>
+      <p style="margin-top:30px"><a href="#" class="alink">Explore 1:1 coaching</a></p>
+    </div>
     <div class="route-steps">
       <div class="wp"><span class="dot"></span><div class="n">Step 01</div><h3>Apply</h3><p>Describe what you would like to work on.</p></div>
       <div class="wp"><span class="dot"></span><div class="n">Step 02</div><h3>Meet Victor on Zoom</h3><p>The next step is a discovery call with Victor to explore fit. There is no obligation to proceed with coaching.</p></div>
       <div class="wp"><span class="dot"></span><div class="n">Step 03</div><h3>Decide whether to work together</h3><p>If you choose to begin coaching, sessions take place online and coaching members receive Circle access.</p></div>
     </div>
-    <p style="margin-top:34px"><a href="#" class="alink">Explore 1:1 coaching</a></p>
   </div>
 </section>
 
