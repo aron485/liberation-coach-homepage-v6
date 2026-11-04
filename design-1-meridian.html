@@ -165,8 +165,9 @@ footer{background:var(--ink);color:var(--bone);padding:72px 0 40px}
   .menu .apply{margin-top:12px;text-align:center}
   .navtoggle:checked ~ .menu{display:flex}
   .hero{grid-template-columns:1fr;min-height:0}
-  .hleft{padding:104px clamp(22px,5vw,40px) 56px;order:2}
-  .hright{min-height:62vh;order:1;padding:90px 0 0}
+  .hleft{padding:104px clamp(22px,5vw,40px) 56px;order:2;min-width:0;overflow:hidden}
+  .hleft h1{font-size:clamp(46px,12.5vw,74px)}
+  .hright{min-height:62vh;order:1;padding:90px 0 0;min-width:0}
   .hright:before{font-size:34vw}
   .trust .row,.route,.route.flip,.work,.victor,.steps,.qa,.fcols{grid-template-columns:1fr}
   .titem{border-left:0;border-top:1px solid var(--lineb)}.titem:first-child{border-top:0}

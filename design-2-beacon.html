@@ -162,8 +162,9 @@ footer{background:var(--ink);color:var(--paper);padding:74px 0 42px}
   .menu .apply{margin-top:12px;text-align:center}
   .navtoggle:checked ~ .menu{display:flex}
   .hero{grid-template-columns:1fr;min-height:0}
-  .hcopy{padding:104px clamp(22px,5vw,40px) 56px;order:2}
-  .hvis{min-height:60vh;order:1;padding-top:84px}
+  .hcopy{padding:104px clamp(22px,5vw,40px) 56px;order:2;min-width:0;overflow:hidden}
+  .hcopy h1{font-size:clamp(42px,11.5vw,70px)}
+  .hvis{min-height:60vh;order:1;padding-top:84px;min-width:0}
   .trust .row,.routes,.work,.victor,.steps,.fcols{grid-template-columns:1fr}
   .titem{border-left:0;border-top:1px solid var(--lineT);padding:18px 0}.titem:first-child{border-top:0}
   .vshape{max-width:320px}
